@@ -1,11 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Vguzman</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - Valentín</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #00ff88, #00a3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideIn 1s ease-out;
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #00ff88;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .post {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .post h2 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .post-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .tags {
+            margin: 1rem 0;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: #00ff88;
+            color: #1a1a1a;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+            background: #00a3ff;
+        }
+
+        footer {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .post-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Bienvenidos a mi página!</h1>
-    <h2>Created by: Valentín, Aleix</h2>
-    <p>Esta es una página de prueba con GitHub Pages.</p>
+    <header class="header">
+        <h1>TechBlog Valentín</h1>
+        <p>Explorando el mundo de la tecnología</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Artículos</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="post-grid">
+            <article class="post">
+                <div class="post-date">15 Mayo 2024</div>
+                <h2>Inteligencia Artificial en 2024</h2>
+                <div class="tags">
+                    <span class="tag">IA</span>
+                    <span class="tag">Tendencias</span>
+                </div>
+                <p>Exploramos los últimos avances en inteligencia artificial y su impacto en la sociedad moderna...</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+
+            <article class="post">
+                <div class="post-date">12 Mayo 2024</div>
+                <h2>Seguridad Informática</h2>
+                <div class="tags">
+                    <span class="tag">Seguridad</span>
+                    <span class="tag">Hacking</span>
+                </div>
+                <p>Consejos esenciales para proteger tus sistemas y datos personales en la era digital...</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+
+            <article class="post">
+                <div class="post-date">10 Mayo 2024</div>
+                <h2>Computación Cuántica</h2>
+                <div class="tags">
+                    <span class="tag">Hardware</span>
+                    <span class="tag">Futuro</span>
+                </div>
+                <p>¿Cómo revolucionará la computación cuántica la industria tecnológica en los próximos años?...</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Valentín - Apasionado por la tecnología</p>
+    </footer>
 </body>
 </html>
